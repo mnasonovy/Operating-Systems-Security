@@ -1,0 +1,32 @@
+Для импортирования VM из .ova файла в VMware Fusion достаточно:
+  1. установить VMware Fusion
+
+  2. запустить процедуру импорта двойным кликом по файлу .ova
+
+
+После окончания процедуры создания виртуальной машины необходимо её донастроить:
+  1. Изменить тип виртуалки на "Debian 11.x 64-bit Arm"
+
+  2. Настроить сетевой интерфейс (проще всего забриджевать) и сгенерировать новый MAC-адрес
+
+  3. [Дополнительно] Установить в качестве загрузочного диска Hard Disk (SATA) - если не хотите ждать появления UEFI Interactive Shell ~2 минуты
+
+  4. Запустить VM
+
+
+Если ОС не загрузилась и появился UEFI Shell, тогда:
+  5. Найдите расположение загрузчика (grubaa64.efi) - скорее всего должен быть в разделе `\EFI\debian`
+    Shell> fs0:
+    FS0:\> ls \EFI\debian\grubaa64.efi
+
+  6. Пропишите новую опцию загрузки и перезагрузите машину
+    FS0:\> bcfg boot add 1 FS0:\EFI\debian\grubaa64.efi "Start debian"
+    FS0:\> reset
+
+
+
+Чуть ссылок про UEFI Shell:
+  1. https://mricher.fr/post/boot-from-an-efi-shell/
+  2. https://uefi.org/sites/default/files/resources/UEFI_Shell_2_2.pdf
+  3. https://www.youtube.com/watch?v=A3z64QUTJsM
+  4. https://www.youtube.com/watch?v=t_7gBLUa600
