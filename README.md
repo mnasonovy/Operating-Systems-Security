@@ -2,9 +2,9 @@
 
 ---
 
-> 📂 Источник материалов: [Google Drive Folder](https://drive.google.com/your-folder-link-here)
->
-> ---
+📂 Источник материалов: [Google Drive Folder]([https://drive.google.com/your-folder-link-here](https://drive.google.com/drive/folders/1td-iB_UoqwlQw8fXQX5hgw-yqlw1JGyz))
+
+---
 
 
 Репозиторий содержит материалы и лабораторные работы по дисциплине **«Безопасность операционных систем»**.
